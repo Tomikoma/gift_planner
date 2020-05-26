@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gift_planner/l10n/gift_planner_localizations.dart';
 
 import 'gift.dart';
 
@@ -22,31 +23,31 @@ class _AddGiftDialogState extends State<AddGiftDialog> {
   @override
   Widget build(BuildContext context) {
     return SimpleDialog(
-      title: Text("UPDATE TIHS"),
+      title: Text(GiftPlannerLocalizations.of(context).addGiftTitle),
       children: [
         Form(
           key: _formKey,
           child: Column(
             children: [
               TextFormField(
-                decoration: InputDecoration(labelText: "NAME"),
+                decoration: InputDecoration(labelText: GiftPlannerLocalizations.of(context).addGiftName),
                 controller: _nameController,
                 validator: (value){
                   if (value.isEmpty){
-                    return "NEED TO FILL";
+                    return GiftPlannerLocalizations.of(context).addGiftNameError;
                   }
                   return null;
                 },
               ),
               TextFormField(
-                decoration: InputDecoration(labelText: "PRICE"),
+                decoration: InputDecoration(labelText: GiftPlannerLocalizations.of(context).addGiftPrice),
                 controller: _priceController,
                 keyboardType: TextInputType.number,
                 validator: (value){
                   if (value.isEmpty){
-                    return "NEED TO FILL";
+                    return GiftPlannerLocalizations.of(context).addGiftPriceError;
                   } else if (!isNumeric(value)) {
-                    return "NUMBER NEEDED";
+                    return GiftPlannerLocalizations.of(context).addGiftPriceWrongFormatError;
                   }
                   return null;
                 },
@@ -59,7 +60,7 @@ class _AddGiftDialogState extends State<AddGiftDialog> {
                       Navigator.of(context).pop();
                     },
                     textColor: Theme.of(context).errorColor,
-                    child: Text("CANCEL"),
+                    child: Text(GiftPlannerLocalizations.of(context).buttonCancel),
                   ),
                   FlatButton(
                     onPressed: () {
@@ -68,7 +69,7 @@ class _AddGiftDialogState extends State<AddGiftDialog> {
                       }
                     },
                     textColor: Theme.of(context).primaryColor,
-                    child: Text("SAVE"),
+                    child: Text(GiftPlannerLocalizations.of(context).buttonCancel),
                   ),
                 ],
               )

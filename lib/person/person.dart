@@ -9,7 +9,7 @@ class Person {
   DateTime birth;
   List<Gift> gifts;
 
-  Person({this.id,@required this.name, @required this.birth}) {
+  Person({this.id, @required this.name, @required this.birth}) {
     this.gifts = [];
   }
 
@@ -20,7 +20,8 @@ class Person {
   static Future<int> insertPerson(Person person) async {
     final sql = SQL();
     final Database db = await sql.database;
-    return db.insert('persons', person.toMap(), conflictAlgorithm: ConflictAlgorithm.replace);
+    return db.insert('persons', person.toMap(),
+        conflictAlgorithm: ConflictAlgorithm.replace);
   }
 
   static Future<void> removePerson(int personId) async {
@@ -33,11 +34,17 @@ class Person {
     final sql = SQL();
     final Database db = await sql.database;
 
+
+
     final List<Map<String, dynamic>> maps = await db.query('persons');
     return List.generate(maps.length, (i) {
       print(maps.toString());
-      return Person(name: maps[i]['name'], birth: DateTime.parse(maps[i]['birth']), id: maps[i]['id']);
+      return Person(
+          name: maps[i]['name'],
+          birth: DateTime.parse(maps[i]['birth']),
+          id: maps[i]['id']);
     });
   }
 
+  
 }

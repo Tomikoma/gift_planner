@@ -1,7 +1,172 @@
 {
-  "@@last_modified": "2020-05-24T18:58:19.028734",
+  "@@last_modified": "2020-05-26T17:28:21.907913",
   "appTitle": "Gift Planner",
   "@appTitle": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "personCardName": "Name: ",
+  "@personCardName": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "personCardBirthDate": "Born  ",
+  "@personCardBirthDate": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "personCardGiftNum": "Number of Gifts",
+  "@personCardGiftNum": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "statistics": "Statistics",
+  "@statistics": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "statisticsTopThreeSumAvg": "Average money spent on persons (TOP 3)",
+  "@statisticsTopThreeSumAvg": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "statisticsPersons": "Persons",
+  "@statisticsPersons": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "statisticsTopThreeSum": "All money spent on persons (TOP 3)",
+  "@statisticsTopThreeSum": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "personsAddButtonHint": "Add a person",
+  "@personsAddButtonHint": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "personsAddNameField": "Name",
+  "@personsAddNameField": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "personsAddPersonTitle": "Add new person",
+  "@personsAddPersonTitle": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "personsAddPersonErrorMessageName": "You need fill this line",
+  "@personsAddPersonErrorMessageName": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "personsAddPersonErrorMessageDate": "Date is required",
+  "@personsAddPersonErrorMessageDate": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "alertTitle": "No persons added yet",
+  "@alertTitle": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "alertContent": "Add persons so we calculate statistics",
+  "@alertContent": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "buttonCancel": "Cancel",
+  "@buttonCancel": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "buttonOk": "Ok",
+  "@buttonOk": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "buttonSave": "Save",
+  "@buttonSave": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "buttonClose": "Close",
+  "@buttonClose": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "buttonChooseDate": "Choose birthdate",
+  "@buttonChooseDate": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "or": "or",
+  "@or": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "buttonChooseContact": "Choose Contact",
+  "@buttonChooseContact": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "contactChooserTitle": "Choose from your contacts",
+  "@contactChooserTitle": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "contactChooserNotFilled": "Not set yet",
+  "@contactChooserNotFilled": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "personWidgetTitle": "'s datas and gifts",
+  "@personWidgetTitle": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "personWidgetName": "Name: ",
+  "@personWidgetName": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "personWidgetGiftName": "Giftname: ",
+  "@personWidgetGiftName": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "personWidgetGiftPrice": "Price: ",
+  "@personWidgetGiftPrice": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "addGiftTitle": "Add a new gift",
+  "@addGiftTitle": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "addGiftName": "Name",
+  "@addGiftName": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "addGiftNameError": "Name is required",
+  "@addGiftNameError": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "addGiftPrice": "Price",
+  "@addGiftPrice": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "addGiftPriceError": "Price is required",
+  "@addGiftPriceError": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "addGiftPriceWrongFormatError": "Price should be number",
+  "@addGiftPriceWrongFormatError": {
     "type": "text",
     "placeholders": {}
   }

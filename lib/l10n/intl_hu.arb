@@ -1,7 +1,172 @@
 {
-  "@@last_modified": "2020-05-24T18:58:19.028734",
+  "@@last_modified": "2020-05-26T17:08:56.276771",
   "appTitle": "Ajándék-tervező",
   "@appTitle": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "personCardName": "Név: ",
+  "@personCardName": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "personCardBirthDate": "Született: ",
+  "@personCardBirthDate": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "personCardGiftNum": "Ajándékok száma: ",
+  "@personCardGiftNum": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "statistics": "Statisztikák",
+  "@statistics": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "statisticsTopThreeSumAvg": "Átlagos költés emberenként (TOP 3)",
+  "@statisticsTopThreeSumAvg": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "statisticsPersons": "Személyek",
+  "@statisticsPersons": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "statisticsTopThreeSum": "Átlagos költés személyenként(TOP 3)",
+  "@statisticsTopThreeSum": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "personsAddButtonHint": "Személy hozzáadása",
+  "@personsAddButtonHint": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "personsAddPersonTitle": "Új személy hozzáadása",
+  "@personsAddPersonTitle": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "personsAddNameField": "Név",
+  "@personsAddNameField": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "personsAddPersonErrorMessageName": "Ezt a sort ki kell tölteni",
+  "@personsAddPersonErrorMessageName": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "personsAddPersonErrorMessageDate": "A dátumot kötelező megadni",
+  "@personsAddPersonErrorMessageDate": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "alertTitle": "Még nem lett hozzáadva személy",
+  "@alertTitle": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "alertContent": "Adjon hozzá személyeket, hogy lehessen statisztikákat számolni",
+  "@alertContent": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "buttonCancel": "Mégse",
+  "@buttonCancel": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "buttonOk": "Ok",
+  "@buttonOk": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "buttonSave": "Mentés",
+  "@buttonSave": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "buttonClose": "Bezárás",
+  "@buttonClose": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "buttonChooseDate": "Válasszon születési dátumot",
+  "@buttonChooseDate": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "or": "vagy",
+  "@or": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "buttonChooseContact": "Válasszon kontaktot",
+  "@buttonChooseContact": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "contactChooserTitle": "Válasszon a névjegyzékéből",
+  "@contactChooserTitle": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "contactChooserNotFilled": "Még nem lett beállítva",
+  "@contactChooserNotFilled": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "personWidgetTitle": " adatai és ajándékai",
+  "@personWidgetTitle": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "personWidgetName": "Név: ",
+  "@personWidgetName": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "personWidgetGiftName": "Ajándék neve: ",
+  "@personWidgetGiftName": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "personWidgetGiftPrice": "Ár: ",
+  "@personWidgetGiftPrice": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "addGiftTitle": "Új ajándék hozzáadása",
+  "@addGiftTitle": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "addGiftName": "Név",
+  "@addGiftName": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "addGiftNameError": "A nevet szükséges megadni",
+  "@addGiftNameError": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "addGiftPrice": "Ár",
+  "@addGiftPrice": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "addGiftPriceError": "Az árat szükséges megadni",
+  "@addGiftPriceError": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "addGiftPriceWrongFormatError": "Az árnak számnak kell lennie",
+  "@addGiftPriceWrongFormatError": {
     "type": "text",
     "placeholders": {}
   }

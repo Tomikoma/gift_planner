@@ -1,6 +1,7 @@
 import 'package:contacts_service/contacts_service.dart';
 import 'package:flutter/material.dart';
-import 'package:gift_planner/person/ContactChooser.dart';
+import 'package:gift_planner/l10n/gift_planner_localizations.dart';
+import 'package:gift_planner/person/contact_chooser.dart';
 import 'package:gift_planner/person/person.dart';
 import 'package:intl/intl.dart';
 import 'package:permission_handler/permission_handler.dart';
@@ -33,25 +34,35 @@ class _AddPersonDialogState extends State<AddPersonDialog> {
         dateString = "";
       });
     });
-    print('...');
   }
-  
-  void chooseTelNumber(BuildContext context) async {
-    if(await Permission.contacts.request().isGranted){
-      Contact c = await Navigator.push(context,
-        MaterialPageRoute(builder: (_) => ContactChooser())
-      );
+
+  void chooseContact(BuildContext context) async {
+    if (await Permission.contacts.request().isGranted) {
+      Contact c = await Navigator.push(
+          context, MaterialPageRoute(builder: (_) => ContactChooser()));
+      if (c == null) {
+        return;
+      }
+      setState(() {
+        if (c.displayName != null) {
+          _nameController.text = c.displayName;
+        }
+        if (c.birthday != null) {
+          _selectedDate = c.birthday;
+          dateString = "";
+        }
+      });
     } else if (await Permission.contacts.isPermanentlyDenied) {
       openAppSettings();
-    } 
+    }
   }
-  
 
   @override
   Widget build(BuildContext context) {
     return SimpleDialog(
+      contentPadding: EdgeInsets.all(5),
       title: Container(
-        child: Text("NEED TO UPDATE THIS"),
+        child: Text(GiftPlannerLocalizations.of(context).personsAddPersonTitle),
       ),
       children: [
         Form(
@@ -60,40 +71,49 @@ class _AddPersonDialogState extends State<AddPersonDialog> {
             children: [
               TextFormField(
                 controller: _nameController,
-                decoration: InputDecoration(labelText: "Név"),
-                validator: (value){
-                  if (value.isEmpty){
-                    return "NEED TO FILL";
+                decoration: InputDecoration(labelText: GiftPlannerLocalizations.of(context).personsAddNameField),
+                validator: (value) {
+                  if (value.isEmpty) {
+                    return GiftPlannerLocalizations.of(context).addGiftNameError;
                   }
                   return null;
                 },
               ),
+              SizedBox(height: 10),
               Row(
                 children: [
-                  Text("DATE"),
                   Text(
-                    _selectedDate == null
-                        ? ' No Date Chosen!'
-                        : 'Picked Date: ${DateFormat.yMd().format(_selectedDate)}',
+                    GiftPlannerLocalizations.of(context).personCardBirthDate,
+                    style: TextStyle(color: Colors.grey[600]),
                   ),
-                  if (dateString.isNotEmpty) Text(dateString)
+                  if (_selectedDate != null)
+                    Text(
+                      '${DateFormat.yMd().format(_selectedDate)}',
+                    ),
+                  //if (dateString.isNotEmpty) Text(dateString)
                 ],
               ),
+              if (dateString.isNotEmpty)
+                Text(
+                  dateString,
+                  style: TextStyle(color: Theme.of(context).errorColor),
+                ),
               FlatButton(
                 textColor: Theme.of(context).primaryColor,
                 child: Text(
-                  'Choose Date',
+                  GiftPlannerLocalizations.of(context).buttonChooseDate,
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
                 onPressed: _presentDatePicker,
               ),
+              Text(GiftPlannerLocalizations.of(context).or),
               FlatButton(
                 textColor: Theme.of(context).primaryColor,
                 child: Text(
-                  'Choose tel',
+                  GiftPlannerLocalizations.of(context).buttonChooseContact,
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
-                onPressed: () => chooseTelNumber(context),
+                onPressed: () => chooseContact(context),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -103,20 +123,22 @@ class _AddPersonDialogState extends State<AddPersonDialog> {
                       Navigator.of(context).pop();
                     },
                     textColor: Theme.of(context).errorColor,
-                    child: Text("CANCEL"),
+                    child: Text(GiftPlannerLocalizations.of(context).buttonCancel),
                   ),
                   FlatButton(
                     onPressed: () {
-                      if (_formKey.currentState.validate() && _selectedDate != null) {
-                        Navigator.of(context).pop(Person(name: _nameController.text, birth: _selectedDate));
+                      if (_formKey.currentState.validate() &&
+                          _selectedDate != null) {
+                        Navigator.of(context).pop(Person(
+                            name: _nameController.text, birth: _selectedDate));
                       } else {
                         setState(() {
-                          dateString = "DATE IS REQUIRED !!!";
+                          dateString = GiftPlannerLocalizations.of(context).personsAddPersonErrorMessageDate;
                         });
                       }
                     },
                     textColor: Theme.of(context).primaryColor,
-                    child: Text("SAVE"),
+                    child: Text(GiftPlannerLocalizations.of(context).buttonSave),
                   ),
                 ],
               )

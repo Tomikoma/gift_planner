@@ -1,13 +1,13 @@
 import 'package:contacts_service/contacts_service.dart';
 import 'package:flutter/material.dart';
+import 'package:gift_planner/l10n/gift_planner_localizations.dart';
 
 class ContactChooser extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("CONTACTCHOOSER"),
-        //actions: <Widget>[CartButton()],
+        title: Text(GiftPlannerLocalizations.of(context).contactChooserTitle),
       ),
       body: Container(
         width: double.infinity,
@@ -19,7 +19,8 @@ class ContactChooser extends StatelessWidget {
                 return ListView(
                   children: snapshot.data.map((contact) {
                     return ListTile(
-                      title: Text(contact.displayName),
+                      title: Text( GiftPlannerLocalizations.of(context).personCardName +( contact.displayName != null ? contact.displayName: GiftPlannerLocalizations.of(context).contactChooserNotFilled)),
+                      subtitle: Text( GiftPlannerLocalizations.of(context).personCardBirthDate +( contact.birthday != null ? contact.birthday.toString().split(" ")[0]: GiftPlannerLocalizations.of(context).contactChooserNotFilled)),
                       onTap: () {
                         Navigator.pop(context, contact);
                       },

@@ -1,92 +1,108 @@
 import 'package:flutter/material.dart';
 import 'package:gift_planner/gift/add_gift_dialog.dart';
 import 'package:gift_planner/gift/gift.dart';
+import 'package:gift_planner/l10n/gift_planner_localizations.dart';
 import 'package:gift_planner/person/person.dart';
 import 'package:gift_planner/person/picture/person_picture.dart';
+import 'package:gift_planner/providers/data_model.dart';
+import 'package:provider/provider.dart';
 
 class PersonWidget extends StatefulWidget {
-  final Person person;
-  PersonWidget({this.person});
+  final int personId;
+  PersonWidget({this.personId});
 
   @override
   _PersonWidgetState createState() => _PersonWidgetState();
 }
 
 class _PersonWidgetState extends State<PersonWidget> {
-
   Future<void> _addGift(BuildContext context) async {
     var gift = await showDialog<Gift>(
-        context: context,
-        builder: (BuildContext contexxt) => AddGiftDialog());
+        context: context, builder: (BuildContext context) => AddGiftDialog());
     if (gift != null) {
-      gift.personId = widget.person.id;
-      print(gift.name + ", " + gift.price.toString() + ", " + gift.personId.toString());
+      gift.personId = widget.personId;
       gift.id = await Gift.insertGift(gift);
       setState(() {
-        //provider?
-        widget.person.gifts.add(gift);
-        print(widget.person.gifts);
+        Provider.of<DataModel>(context, listen: false)
+            .addGift(gift);
       });
-    } else {
-      print("NULL GIFT");
     }
   }
 
   @override
   void initState() {
     super.initState();
-    loadGifts();
+    //loadGifts();
   }
 
-  Future<void> loadGifts() async {
-    var giftsLoaded = await Gift.gifts(widget.person.id);
-    setState(() {
-      widget.person.gifts = giftsLoaded;
-    });
-  }
-
-  removeGift(giftId) async {
+  removeGift(BuildContext context, int giftId) async {
     await Gift.removeGift(giftId);
     setState(() {
-      widget.person.gifts.removeWhere((element) => element.id == giftId);
-    }); 
+      Provider.of<DataModel>(context, listen: false)
+          .removeGift(giftId, widget.personId);
+    });
   }
 
   @override
   Widget build(BuildContext context) {
+    Person person = Provider.of<DataModel>(context).person(widget.personId);
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.person.name),
+        title: Text(person.name),
         actions: [
-        IconButton(icon: Icon(Icons.add) ,onPressed: () => _addGift(context),)
-      ],),
+          IconButton(
+            icon: Icon(Icons.add),
+            onPressed: () => _addGift(context),
+          )
+        ],
+      ),
       body: Column(children: [
         Card(
           child: Row(
             children: [
-              PersonPicture(personId: widget.person.id,),
-              Text(widget.person.name),
-              Text(widget.person.birth.toString())
+              Expanded(
+                flex: 1,
+                child: PersonPicture(
+                  personId: person.id,
+                ),
+              ),
+              Expanded(
+                flex: 2,
+                child: Padding(
+                  padding: EdgeInsets.all(10.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start ,
+                    children: [
+                      Text(GiftPlannerLocalizations.of(context).personWidgetName + person.name),
+                      SizedBox(height: 5),
+                      Text(GiftPlannerLocalizations.of(context).personCardBirthDate + person.birth.toString().split(" ")[0]),
+                      SizedBox(height: 5),
+                      Text(GiftPlannerLocalizations.of(context).personCardGiftNum + person.gifts.length.toString())
+                    ],
+                  ),
+                ),
+              )
             ],
           ),
         ),
         Expanded(
           child: ListView.builder(
-              itemCount: widget.person.gifts.length,
+              itemCount: person.gifts.length,
               itemBuilder: (context, index) {
-                var gift = widget.person.gifts[index];
+                var gift = person.gifts[index];
                 return Card(
                   child: ListTile(
-                    // children: [
-                    //   Text(widget.person.gifts[index].name + ": "),
-                    //   Text(widget.person.gifts[index].price.toString()),
-                    // ],
                     leading: CircleAvatar(
-                      radius: 20,
+                      backgroundImage: AssetImage('images/gift.png'),
+                      radius: 25,
                     ),
-                    title: Text(gift.name),
-                    subtitle: Text(gift.price.toString() + " Ft"),
-                    trailing: IconButton(icon: Icon(Icons.delete), color: Colors.red, onPressed: () => removeGift(gift.id),),
+                    title: Text(GiftPlannerLocalizations.of(context).personWidgetGiftName + gift.name),
+                    subtitle: Text(GiftPlannerLocalizations.of(context).personWidgetGiftPrice + gift.price.toString() + " Ft"),
+                    trailing: IconButton(
+                      icon: Icon(Icons.delete),
+                      color: Colors.red,
+                      onPressed: () => removeGift(context, gift.id),
+                    ),
                   ),
                 );
               }),

@@ -21,6 +21,39 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
-    "appTitle" : MessageLookupByLibrary.simpleMessage("Gift Planner")
+    "addGiftName" : MessageLookupByLibrary.simpleMessage("Name"),
+    "addGiftNameError" : MessageLookupByLibrary.simpleMessage("Name is required"),
+    "addGiftPrice" : MessageLookupByLibrary.simpleMessage("Price"),
+    "addGiftPriceError" : MessageLookupByLibrary.simpleMessage("Price is required"),
+    "addGiftPriceWrongFormatError" : MessageLookupByLibrary.simpleMessage("Price should be number"),
+    "addGiftTitle" : MessageLookupByLibrary.simpleMessage("Add a new gift"),
+    "alertContent" : MessageLookupByLibrary.simpleMessage("Add persons so we calculate statistics"),
+    "alertTitle" : MessageLookupByLibrary.simpleMessage("No persons added yet"),
+    "appTitle" : MessageLookupByLibrary.simpleMessage("Gift Planner"),
+    "buttonCancel" : MessageLookupByLibrary.simpleMessage("Cancel"),
+    "buttonChooseContact" : MessageLookupByLibrary.simpleMessage("Choose Contact"),
+    "buttonChooseDate" : MessageLookupByLibrary.simpleMessage("Choose birthdate"),
+    "buttonClose" : MessageLookupByLibrary.simpleMessage("Close"),
+    "buttonOk" : MessageLookupByLibrary.simpleMessage("Ok"),
+    "buttonSave" : MessageLookupByLibrary.simpleMessage("Save"),
+    "contactChooserNotFilled" : MessageLookupByLibrary.simpleMessage("Not set yet"),
+    "contactChooserTitle" : MessageLookupByLibrary.simpleMessage("Choose from your contacts"),
+    "or" : MessageLookupByLibrary.simpleMessage("or"),
+    "personCardBirthDate" : MessageLookupByLibrary.simpleMessage("Born  "),
+    "personCardGiftNum" : MessageLookupByLibrary.simpleMessage("Number of Gifts"),
+    "personCardName" : MessageLookupByLibrary.simpleMessage("Name: "),
+    "personWidgetGiftName" : MessageLookupByLibrary.simpleMessage("Giftname: "),
+    "personWidgetGiftPrice" : MessageLookupByLibrary.simpleMessage("Price: "),
+    "personWidgetName" : MessageLookupByLibrary.simpleMessage("Name: "),
+    "personWidgetTitle" : MessageLookupByLibrary.simpleMessage("\'s datas and gifts"),
+    "personsAddButtonHint" : MessageLookupByLibrary.simpleMessage("Add a person"),
+    "personsAddNameField" : MessageLookupByLibrary.simpleMessage("Name"),
+    "personsAddPersonErrorMessageDate" : MessageLookupByLibrary.simpleMessage("Date is required"),
+    "personsAddPersonErrorMessageName" : MessageLookupByLibrary.simpleMessage("You need fill this line"),
+    "personsAddPersonTitle" : MessageLookupByLibrary.simpleMessage("Add new person"),
+    "statistics" : MessageLookupByLibrary.simpleMessage("Statistics"),
+    "statisticsPersons" : MessageLookupByLibrary.simpleMessage("Persons"),
+    "statisticsTopThreeSum" : MessageLookupByLibrary.simpleMessage("All money spent on persons (TOP 3)"),
+    "statisticsTopThreeSumAvg" : MessageLookupByLibrary.simpleMessage("Average money spent on persons (TOP 3)")
   };
 }

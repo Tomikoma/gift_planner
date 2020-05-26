@@ -31,7 +31,9 @@ class _PersonPictureState extends State<PersonPicture> {
     );
     final file = File(path);
     if (file.existsSync()){
-      image = file;
+      setState(() {
+        image = file;
+      });
     }
   }
 
@@ -51,7 +53,7 @@ class _PersonPictureState extends State<PersonPicture> {
             color: Theme.of(context).primaryColor,
           ),
           child: CircleAvatar(
-              radius: 30,
+              radius: 50,
               backgroundImage: image?.existsSync() == true
                   ? Image.memory(
                       image.readAsBytesSync(),
@@ -69,7 +71,7 @@ class _PersonPictureState extends State<PersonPicture> {
               File newImage = await Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => TakePictureWidget(personId: widget.personId, camera: MyApp.camera,),
+                  builder: (context) => TakePictureWidget(personId: widget.personId,),
                 ),
               );
               setImage(newImage);

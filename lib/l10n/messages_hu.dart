@@ -21,6 +21,39 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
-    "appTitle" : MessageLookupByLibrary.simpleMessage("Ajándék-tervező")
+    "addGiftName" : MessageLookupByLibrary.simpleMessage("Név"),
+    "addGiftNameError" : MessageLookupByLibrary.simpleMessage("A nevet szükséges megadni"),
+    "addGiftPrice" : MessageLookupByLibrary.simpleMessage("Ár"),
+    "addGiftPriceError" : MessageLookupByLibrary.simpleMessage("Az árat szükséges megadni"),
+    "addGiftPriceWrongFormatError" : MessageLookupByLibrary.simpleMessage("Az árnak számnak kell lennie"),
+    "addGiftTitle" : MessageLookupByLibrary.simpleMessage("Új ajándék hozzáadása"),
+    "alertContent" : MessageLookupByLibrary.simpleMessage("Adjon hozzá személyeket, hogy lehessen statisztikákat számolni"),
+    "alertTitle" : MessageLookupByLibrary.simpleMessage("Még nem lett hozzáadva személy"),
+    "appTitle" : MessageLookupByLibrary.simpleMessage("Ajándék-tervező"),
+    "buttonCancel" : MessageLookupByLibrary.simpleMessage("Mégse"),
+    "buttonChooseContact" : MessageLookupByLibrary.simpleMessage("Válasszon kontaktot"),
+    "buttonChooseDate" : MessageLookupByLibrary.simpleMessage("Válasszon születési dátumot"),
+    "buttonClose" : MessageLookupByLibrary.simpleMessage("Bezárás"),
+    "buttonOk" : MessageLookupByLibrary.simpleMessage("Ok"),
+    "buttonSave" : MessageLookupByLibrary.simpleMessage("Mentés"),
+    "contactChooserNotFilled" : MessageLookupByLibrary.simpleMessage("Még nem lett beállítva"),
+    "contactChooserTitle" : MessageLookupByLibrary.simpleMessage("Válasszon a névjegyzékéből"),
+    "or" : MessageLookupByLibrary.simpleMessage("vagy"),
+    "personCardBirthDate" : MessageLookupByLibrary.simpleMessage("Született: "),
+    "personCardGiftNum" : MessageLookupByLibrary.simpleMessage("Ajándékok száma: "),
+    "personCardName" : MessageLookupByLibrary.simpleMessage("Név: "),
+    "personWidgetGiftName" : MessageLookupByLibrary.simpleMessage("Ajándék neve: "),
+    "personWidgetGiftPrice" : MessageLookupByLibrary.simpleMessage("Ár: "),
+    "personWidgetName" : MessageLookupByLibrary.simpleMessage("Név: "),
+    "personWidgetTitle" : MessageLookupByLibrary.simpleMessage(" adatai és ajándékai"),
+    "personsAddButtonHint" : MessageLookupByLibrary.simpleMessage("Személy hozzáadása"),
+    "personsAddNameField" : MessageLookupByLibrary.simpleMessage("Név"),
+    "personsAddPersonErrorMessageDate" : MessageLookupByLibrary.simpleMessage("A dátumot kötelező megadni"),
+    "personsAddPersonErrorMessageName" : MessageLookupByLibrary.simpleMessage("Ezt a sort ki kell tölteni"),
+    "personsAddPersonTitle" : MessageLookupByLibrary.simpleMessage("Új személy hozzáadása"),
+    "statistics" : MessageLookupByLibrary.simpleMessage("Statisztikák"),
+    "statisticsPersons" : MessageLookupByLibrary.simpleMessage("Személyek"),
+    "statisticsTopThreeSum" : MessageLookupByLibrary.simpleMessage("Átlagos költés személyenként(TOP 3)"),
+    "statisticsTopThreeSumAvg" : MessageLookupByLibrary.simpleMessage("Átlagos költés emberenként (TOP 3)")
   };
 }
