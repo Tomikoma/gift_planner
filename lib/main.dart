@@ -39,12 +39,19 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         title: 'Flutter Demo',
-        initialRoute: '/',
-        routes: {
-          '/': (_) => Home(),
-          '/person': (_) => PersonWidget(),
-          '/stat': (_) => StatisticsWidget()
+        onGenerateRoute: (settings) {
+          if (settings.name == "/stat") {
+            return PageRouteBuilder(
+              transitionDuration: Duration(milliseconds: 500),
+              pageBuilder: (_, __, ____) => StatisticsWidget(),
+              transitionsBuilder: (_, anim, __, child) {
+                return ScaleTransition(scale: anim, child: child, alignment: Alignment.center,);
+              }
+            );
+          }
         },
+        initialRoute: '/',
+        routes: {'/': (_) => Home(), },
         localizationsDelegates: [
           GiftPlannerLocalizations.delegate,
           GlobalMaterialLocalizations.delegate,

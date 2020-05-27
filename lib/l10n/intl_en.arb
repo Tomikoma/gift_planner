@@ -15,7 +15,7 @@
     "type": "text",
     "placeholders": {}
   },
-  "personCardGiftNum": "Number of Gifts",
+  "personCardGiftNum": "Number of Gifts: ",
   "@personCardGiftNum": {
     "type": "text",
     "placeholders": {}

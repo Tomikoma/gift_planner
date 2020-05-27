@@ -40,7 +40,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "contactChooserTitle" : MessageLookupByLibrary.simpleMessage("Choose from your contacts"),
     "or" : MessageLookupByLibrary.simpleMessage("or"),
     "personCardBirthDate" : MessageLookupByLibrary.simpleMessage("Born  "),
-    "personCardGiftNum" : MessageLookupByLibrary.simpleMessage("Number of Gifts"),
+    "personCardGiftNum" : MessageLookupByLibrary.simpleMessage("Number of Gifts: "),
     "personCardName" : MessageLookupByLibrary.simpleMessage("Name: "),
     "personWidgetGiftName" : MessageLookupByLibrary.simpleMessage("Giftname: "),
     "personWidgetGiftPrice" : MessageLookupByLibrary.simpleMessage("Price: "),

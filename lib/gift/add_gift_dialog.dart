@@ -69,7 +69,7 @@ class _AddGiftDialogState extends State<AddGiftDialog> {
                       }
                     },
                     textColor: Theme.of(context).primaryColor,
-                    child: Text(GiftPlannerLocalizations.of(context).buttonCancel),
+                    child: Text(GiftPlannerLocalizations.of(context).buttonSave),
                   ),
                 ],
               )
